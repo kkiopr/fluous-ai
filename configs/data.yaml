@@ -1,0 +1,12 @@
+min_words: 20              # after merging chat bursts
+burst_gap_minutes: 10      # merge consecutive short chat messages within this gap
+cutoff_date: "2022-11-30"  # drop later texts (LLM contamination); set null to disable
+drop_unknown_dates: false
+dedupe_jaccard: 0.8
+scrub_names_with_spacy: true
+spacy_model: en_core_web_sm
+split:
+  eval_frac: 0.12
+  eval_max_per_author: 200
+  heldout_authors: []      # whole authors held out as the "unseen voice" test
+  seed: 13

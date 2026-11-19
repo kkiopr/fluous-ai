@@ -1,0 +1,10 @@
+base_model: "REPLACE_ME"
+sft_adapter: checkpoints/sft
+data: data/processed/prefs.jsonl
+output_dir: checkpoints/dpo
+beta: 0.1
+lr: 5.0e-6
+epochs: 1
+batch_size: 2
+grad_accum: 8
+max_len: 1536

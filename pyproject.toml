@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fluous"
+version = "0.0.1"
+description = "Voice-conditioned rewriting with a fact guard"
+requires-python = ">=3.10"
+dependencies = ["pyyaml", "numpy"]
+
+[project.optional-dependencies]
+nlp = ["spacy"]
+train = ["torch", "transformers", "peft", "datasets", "trl", "accelerate"]
+llm = ["anthropic"]
+dev = ["pytest"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

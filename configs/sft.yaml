@@ -1,0 +1,10 @@
+base_model: "REPLACE_ME"    # check the license allows your use (commercial, naming, etc.)
+data: data/processed/carded.jsonl
+output_dir: checkpoints/sft
+max_len: 1536
+ks: [1, 2, 3, 7]            # number of voice samples shown per episode
+episodes_per_record: 3
+per_author_cap: 1500        # cap so one prolific author doesn't dominate
+lora: {r: 16, alpha: 32, dropout: 0.05}
+train: {epochs: 2, lr: 2.0e-4, batch_size: 4, grad_accum: 8}
+seed: 13
